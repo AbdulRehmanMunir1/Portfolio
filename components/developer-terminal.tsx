@@ -105,7 +105,6 @@ export function DeveloperTerminal() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 className="flex-1 bg-transparent outline-none text-foreground caret-foreground"
-                autoFocus
                 autoComplete="off"
                 spellCheck="false"
               />
