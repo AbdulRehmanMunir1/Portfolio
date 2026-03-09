@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect } from "react";
 import { Navbar } from "@/components/navbar/navbar";
 import { Hero } from "@/components/hero/hero";
 import { About } from "@/components/about/about";
@@ -12,6 +15,10 @@ import { CommandMenu } from "@/components/command-menu";
 import { AIAssistant } from "@/components/ai-assistant";
 
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col relative">
       <Navbar />
