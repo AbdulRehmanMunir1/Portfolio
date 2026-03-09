@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 export function AIAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ role: "assistant" | "user"; text: string }[]>([
-    { role: "assistant", text: "Hi! I'm Abdul's AI assistant. Ask me about his skills, projects, or background." }
+    { role: "assistant", text: "Hi! I'm AbdulRehman's AI assistant. Ask me about his skills, projects, or background." }
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -136,7 +136,7 @@ export function AIAssistant() {
                   <Send className="w-4 h-4 ml-0.5 text-white" />
                 </Button>
               </form>
-              <p className="text-[10px] text-muted-foreground text-center mt-2">Powered by AI • Ask about Abdul&apos;s work</p>
+              <p className="text-[10px] text-muted-foreground text-center mt-2">Powered by AI • Ask about AbdulRehman&apos;s work</p>
             </div>
           </motion.div>
         )}

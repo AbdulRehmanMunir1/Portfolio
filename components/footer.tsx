@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { profile } from "@/data/profile";
 
 export function Footer() {
   return (
@@ -12,13 +13,13 @@ export function Footer() {
         </div>
 
         <div className="flex gap-4">
-          <a href="https://github.com/AbdulRehmanMunir1" target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded-full hover:bg-primary/20 hover:text-primary transition-colors">
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded-full hover:bg-primary/20 hover:text-primary transition-colors">
             <Github className="w-5 h-5" />
           </a>
-          <a href="https://www.linkedin.com/in/abdulrehman-munir-5343b12b3/" target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded-full hover:bg-primary/20 hover:text-primary transition-colors">
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded-full hover:bg-primary/20 hover:text-primary transition-colors">
             <Linkedin className="w-5 h-5" />
           </a>
-          <a href="mailto:abdulrehmanmunir690@gmail.com" className="p-2 bg-muted rounded-full hover:bg-primary/20 hover:text-primary transition-colors">
+          <a href={`mailto:${profile.email}`} className="p-2 bg-muted rounded-full hover:bg-primary/20 hover:text-primary transition-colors">
             <Mail className="w-5 h-5" />
           </a>
         </div>

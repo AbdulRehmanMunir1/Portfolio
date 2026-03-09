@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Send } from "lucide-react";
 import { useState } from "react";
+import { profile } from "@/data/profile";
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -58,31 +59,31 @@ export function Contact() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <a href="mailto:abdulrehmanmunir690@gmail.com" className="flex items-center gap-4 group">
+                <a href={`mailto:${profile.email}`} className="flex items-center gap-4 group">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shadow-sm">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg group-hover:text-primary transition-colors">Email</h4>
-                    <p className="text-muted-foreground">abdulrehmanmunir690@gmail.com</p>
+                    <p className="text-muted-foreground">{profile.email}</p>
                   </div>
                 </a>
-                <a href="https://www.linkedin.com/in/abdulrehman-munir-5343b12b3/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shadow-sm">
                     <Linkedin className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg group-hover:text-primary transition-colors">LinkedIn</h4>
-                    <p className="text-muted-foreground">@abdulrehman-munir</p>
+                    <p className="text-muted-foreground">{profile.linkedin.split("/").pop()}</p>
                   </div>
                 </a>
-                <a href="https://github.com/AbdulRehmanMunir1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+                <a href={profile.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors shadow-sm">
                     <Github className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg group-hover:text-primary transition-colors">GitHub</h4>
-                    <p className="text-muted-foreground">@AbdulRehmanMunir1</p>
+                    <p className="text-muted-foreground">{profile.github.split("/").pop()}</p>
                   </div>
                 </a>
               </CardContent>

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Terminal as TerminalIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { skills } from "@/data/skills";
+import { profile } from "@/data/profile";
 
 export function DeveloperTerminal() {
   const [input, setInput] = useState("");
@@ -41,10 +42,10 @@ export function DeveloperTerminal() {
 
     switch (cmd) {
       case "help":
-        output = "Available commands: help, about, skills, projects, contact, github, linkedin, resume, joke, clear";
+        output = "Available commands: help, about, profile, skills, projects, contact, github, linkedin, resume, joke, clear";
         break;
       case "about":
-        output = "Abdul Rehman is a Software Engineer specializing in the MERN stack and AI integrations.";
+        output = `${profile.name} is a Software Engineer specializing in the MERN stack and AI integrations.`;
         break;
       case "skills": {
         const list: string[] = [];
@@ -58,19 +59,19 @@ export function DeveloperTerminal() {
         output = "I have built Crypto Dashboards, AI Model Integrators, and Automation Toolkits. See the Projects section above or visit my GitHub.";
         break;
       case "contact":
-        output = "Email: hello@example.com – also available on LinkedIn & GitHub.";
+        output = `Email: ${profile.email} – also available on LinkedIn & GitHub.`;
         break;
       case "github":
         output = (
-          <a href="https://github.com/abdul-rehman" target="_blank" rel="noopener noreferrer" className="underline text-blue-400">
-            https://github.com/abdul-rehman
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" className="underline text-blue-400">
+            {profile.github}
           </a>
         );
         break;
       case "linkedin":
         output = (
-          <a href="https://linkedin.com/in/abdul-rehman" target="_blank" rel="noopener noreferrer" className="underline text-blue-400">
-            https://linkedin.com/in/abdul-rehman
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="underline text-blue-400">
+            {profile.linkedin}
           </a>
         );
         break;
@@ -83,6 +84,13 @@ export function DeveloperTerminal() {
         break;
       case "joke":
         output = jokes[Math.floor(Math.random() * jokes.length)];
+        break;
+      case "profile":
+        output = (
+          <pre className="text-left whitespace-pre-wrap">
+            {JSON.stringify(profile, null, 2)}
+          </pre>
+        );
         break;
       case "clear":
         setHistory([]);
